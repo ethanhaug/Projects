@@ -3,9 +3,8 @@ Module: wordy
 
 A completely original word game that will knock your socks off!
 
-Authors:
+Author:
 - Ethan
-- Nate
 """
 
 import string
@@ -44,15 +43,10 @@ class WordyController:
         # Create the view
         self.view = view
 
-        # TODO: use the set_key_handler method in your view to set up the
-        # event handlers for all of the keyboard keys (A-Z, BACK, ENTER)
-
         for ch in string.ascii_lowercase:
             self.view.set_key_handler(str(ch), self.create_letter_handler(ch))
         view.set_key_handler('back', self.delete_last_letter)
         view.set_key_handler('enter', self.check_solution)
-
-        # TODO: use create_binding to set Control-H to show the hint
 
         self.view.create_binding('<Control-h>', self.show_hint)
 
